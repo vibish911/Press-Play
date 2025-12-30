@@ -63,12 +63,28 @@ header {
   width:30%;
   display: absolute;
 
-
 }
 
 
+
 .song-container-button{
-  width:30%;
+  position: relative;
+  left:0;
   height:50px;
   margin-top: 40px;
+  background-color: antiquewhite;
+  border: 0px;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.song-container-button:hover{
+
+  background-color: rgb(174, 49, 197);
+  box-shadow: 2px 2px 2px black;
+  padding: 20px;
+  position: relative;
+  left:-5px;
+  transition: padding 0.5s, background-color 0.5s ease,left 0.5s ;
+
 }

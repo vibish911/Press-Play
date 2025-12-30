@@ -25,11 +25,11 @@ header {
 
 #main {
   background-color: rgba(255, 255, 255, 0.105);
-  height: 60vh;
+  height: 75vh;
   width: 100vw;
   padding: 10px;
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));;
   column-gap: 10px;
 
 }

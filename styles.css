@@ -31,12 +31,10 @@ header {
   width: 100%;
   padding: 10px 10px 10px 5%;
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));;
   column-gap: 10px;
   overflow: scroll;
   overflow-x: hidden;
-
-
 }
 
 #main:focus{

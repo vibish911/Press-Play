@@ -1,0 +1,12 @@
+{
+    "songs":[
+    {
+        "name":"SongA",
+        "filePath":"./songs/song1.mp3"
+    },
+    {
+        "name":"SongB",
+        "filePath":"./songs/song2.mp3"
+    }
+   ]
+}

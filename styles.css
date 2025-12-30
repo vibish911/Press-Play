@@ -4,6 +4,8 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow-x:hidden;
+
 }
 
 header {
@@ -25,12 +27,15 @@ header {
 
 #main {
   background-color: rgba(255, 255, 255, 0.105);
-  height: 60vh;
-  width: 100vw;
-  padding: 10px;
+  height: 72vh;
+  width: 100%;
+  padding: 10px 10px 10px 5%;
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   column-gap: 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+
 
 }
 
@@ -38,17 +43,34 @@ header {
   outline : none;
 }
 
-#s1 {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-#s0 {
-  margin-left: 100px;
-  margin-right: 100px;
-}
 
 #now-playing-container {
+  min-height: 12vh;
   color: white;
   background-color : rgba(0, 0, 0, 0.765);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  bottom:0;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 25px;
+  padding:5px;
+  border-radius:20px;
+}
+
+#now-playing{
+  flex:1;
+  width:30%;
+  display: absolute;
+
+
+}
+
+
+.song-container-button{
+  width:30%;
+  height:50px;
+  margin-top: 40px;
 }

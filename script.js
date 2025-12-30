@@ -8,29 +8,59 @@
 //         }
 //      }
 // })});
+
+let bodyTag = document.getElementById('bodyTag')
+bodyTag.addEventListener('keydown', (event) => {
+    if (event.key === ' ' || event.key === 'Spacebar') {
+        // console.log('pressed the div section')
+        togglePlay()
+    }
+})
+
 initial();
-async function initial()
-{
+async function initial() {
     await start();
     for (let b of buttons) {
-    // console.log('--->')
-    b.addEventListener('click', () => {
-        
-        const songPath = b.dataset.filePath;
-        const name= b.dataset.name;
-        
-        // console.log( document.getElementById("now-playing-container"))
-        document.getElementById("now-playing-container").innerHTML = `${name}<br>
-                     <audio controls id="now-playing"> 
-                        <source src="${songPath}" 
-                        type="audio/mp3"
-                        ></audio>`
-        document.getElementById("now-playing").play();
-        
+        // console.log('--->')
+        b.addEventListener('click', () => {
 
-    });
+            const songPath = b.dataset.filePath;
+            const name = b.dataset.name;
+
+            // console.log( document.getElementById("now-playing-container"))
+            document.getElementById("now-playing-container").innerHTML = `${name}<br>
+                     <audio controls id="now-playing"> 
+                        <source 
+                            src="${songPath}" 
+                            type="audio/mp3"
+                        >
+                    </audio>`
+            document.getElementById("now-playing").play();
+
+
+        });
+
+        b.addEventListener('keydown', (event) => {
+            if (event.key === 'Spacebar' || event.key === ' '){
+                event.preventDefault()
+            }
+        });
+    }
 }
+
+let nowPlaying;
+function togglePlay() {
+    nowPlaying = document.getElementById('now-playing');
+    if (!nowPlaying) return;
+    
+    if (nowPlaying.paused) {
+        nowPlaying.play();
+    }
+    else {
+        nowPlaying.pause();
+    }
 }
+
 
 // console.log('-----<')
 const buttons = document.getElementsByClassName("song-container-button");

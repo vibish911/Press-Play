@@ -13,13 +13,13 @@ async function initial()
 {
     await start();
     for (let b of buttons) {
-    console.log('--->')
+    // console.log('--->')
     b.addEventListener('click', () => {
         
         const songPath = b.dataset.filePath;
         const name= b.dataset.name;
         
-        console.log( document.getElementById("now-playing-container"))
+        // console.log( document.getElementById("now-playing-container"))
         document.getElementById("now-playing-container").innerHTML = `${name}<br>
                      <audio controls id="now-playing"> 
                         <source src="${songPath}" 
@@ -32,12 +32,12 @@ async function initial()
 }
 }
 
-console.log('-----<')
+// console.log('-----<')
 const buttons = document.getElementsByClassName("song-container-button");
-console.log(buttons)
-console.log(buttons[0])
+// console.log(buttons)
+// console.log(buttons[0])
 
-console.log('--<>---')
+// console.log('--<>---')
 allSongs = undefined;
 
 async function getData() {

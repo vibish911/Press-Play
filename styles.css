@@ -5,6 +5,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x:hidden;
+  background-color: rgba(0, 0, 0, 1);
 
 }
 
@@ -26,26 +27,41 @@ header {
 }
 
 #main {
-  background-color: rgba(255, 255, 255, 0.105);
+  background-color: rgba(0, 0, 0, 1);
   height: 72vh;
   width: 100%;
-  padding: 10px 10px 10px 5%;
+  padding: 10px 10px 10px 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));;
+  grid-template-columns:0fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
   column-gap: 10px;
-  overflow: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+}
+
+
+#main::-webkit-scrollbar {
+  width: 10px;
+}
+
+#main::-webkit-scrollbar-thumb {
+  background: #b71313;
+}
+
+#main::-webkit-scrollbar-track {
+  background: #eee;
 }
 
 #main:focus{
   outline : none;
 }
 
-
+input{
+  background-color: rgb(214, 166, 255);
+}
 #now-playing-container {
-  min-height: 12vh;
-  color: white;
-  background-color : rgba(0, 0, 0, 0.765);
+  min-height: 11vh;
+  color: rgb(255, 255, 255);
+  background-color : rgb(172, 76, 255);
   align-items: center;
   justify-content: center;
   display: flex;
@@ -55,6 +71,7 @@ header {
   padding-top: 10px;
   font-size: 25px;
   padding:5px;
+  margin:10px;
   border-radius:20px;
 }
 
@@ -65,6 +82,33 @@ header {
 
 }
 
+audio{
+  accent-color: blue;
+}
+audio::-webkit-media-controls-panel {
+  background-color: black;
+  color: aliceblue;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: aliceblue;
+  border-radius: 50px;;
+}
+
+audio::-webkit-media-controls-timeline {
+  background: #ffffff;
+  border-radius: 60px;
+  margin-left: 20px;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  color: #ffffff;
+  margin-left:20px;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  color: #ffffff;
+}
 
 
 .song-container-button{
@@ -72,19 +116,33 @@ header {
   left:0;
   height:50px;
   margin-top: 40px;
-  background-color: antiquewhite;
+  background-color: rgb(163, 76, 240);
+  box-shadow: 0px 0px 100px 2px rgb(180, 17, 234);
   border: 0px;
   border-radius: 20px;
+  left:10%;
   padding: 15px;
+  min-height: 100px;
+  min-width: 70%;
+  z-index:2;
+  
+
 }
 
 .song-container-button:hover{
 
-  background-color: rgb(174, 49, 197);
-  box-shadow: 2px 2px 2px black;
+  background-color: rgb(226, 83, 255);
+  box-shadow: 2px 2px 20px 5px rgb(78, 0, 141);
   padding: 20px;
   position: relative;
-  left:-5px;
-  transition: padding 0.5s, background-color 0.5s ease,left 0.5s ;
+  
+  /* left:-5px; */
+  /* right:5px; */
+  transform :scale(3.0);
+  z-index:0;
+  transition: padding 0.5s, 
+              background-color 0.5s ease,
+              transform 1s;
 
 }
+

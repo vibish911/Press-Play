@@ -80,7 +80,7 @@ function renderSongs(allSongs) {
     const main = document.getElementById("main");
     main.innerHTML = "";
     allSongs.forEach((e) => {
-        main.innerHTML += `<div class="song-container">
+        main.innerHTML += `<div> </div><div class="song-container">
         <button data-file-path=${e.filePath} data-name=${e.name} class="song-container-button">${e.name}</button>
         </div>`
     });

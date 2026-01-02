@@ -76,6 +76,7 @@ input{
   padding:5px;
   margin:10px;
   border-radius:20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
 }
 
 #now-playing{
@@ -134,7 +135,9 @@ audio::-webkit-media-controls-time-remaining-display {
   width: 100%;
   white-space: wrap;
   overflow: hidden;
-  text-overflow: ellipsis;   
+  text-overflow: ellipsis;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;   
+  font-size: 20px;
 
 }
 

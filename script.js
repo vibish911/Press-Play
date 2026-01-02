@@ -128,7 +128,7 @@ async function main(filePath) {
     renderSongs(allSongs);
 }
 
-main("./songs1.json");
+main("./songs.json");
 
 
 

@@ -60,8 +60,8 @@ function togglePlay() {
 
 allSongs = [];
 
-async function getData() {
-    const response = await fetch("songs.json");
+async function getData(filePath) {
+    const response = await fetch(filePath);
     const data = await response.json(); // convert to JS object
     allSongs = data.songs;
 }
@@ -82,7 +82,7 @@ function renderSongs(allSongs) {
             const songPath = b.dataset.filePath;
             const name = b.dataset.name;
             // console.log(b.dataset);
-
+            
             // console.log( document.getElementById("now-playing-container"))
             document.getElementById("now-playing-container").innerHTML = `${name}<br>
                      <audio controls id="now-playing"> 
@@ -92,8 +92,6 @@ function renderSongs(allSongs) {
                         >
                     </audio>`
             document.getElementById("now-playing").play();
-
-
         });
 
         b.addEventListener('keydown', (event) => {
@@ -109,12 +107,28 @@ function renderSongs(allSongs) {
 //     allSongs=data.songs;
 //     renderSongs(allSongs);
 // }
-async function main() {
-    await getData();
+
+document.getElementById('page1').addEventListener('click',async()=>{
+      await main("./songs.json");
+      search();
+});
+
+document.getElementById('page2').addEventListener('click',async()=>{
+      await main("./songs2.json");
+      search();
+});
+
+document.getElementById('page3').addEventListener('click',async()=>{
+      await main("./songs3.json");
+      search();
+});
+
+async function main(filePath) {
+    await getData(filePath);
     renderSongs(allSongs);
 }
 
-main();
+main("./songs1.json");
 
 
 

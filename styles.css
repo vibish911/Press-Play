@@ -5,35 +5,76 @@ body {
   height: 100%;
   width: 100%;
   overflow-x:hidden;
-  background-color: rgba(0, 0, 0, 1);
+  overflow-y:auto;
+  background:repeating-linear-gradient(to top,rgb(55, 0, 92),rgb(0, 0, 0));
+
+  
 
 }
 
 header {
-  background-color: rgba(16, 0, 35, 0.765);
-  height: 10%;
+  background: linear-gradient(to bottom ,rgb(117, 8, 180),rgb(0, 0, 0));
+  height: 13%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   text-align: center;
 }
 
 #searchbox {
-  width: 50%;
+  flex:5;
+  max-width:50%;
   height: 40%;
-  margin-top: 1.5%;
   font-size: 16px;
   border-radius: 5px;
   border: none;
   padding-left: 10px;
+  margin: 1.5% 20% 1.5% auto;
+  background: linear-gradient(to right,rgb(117, 8, 180),rgb(130, 20, 200));
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:white;
+}
+
+#searchbox::placeholder{
+  color: #ffffff;
+}
+
+#searchbox:focus{
+  outline:none
+}
+
+#header-btn-group{
+   flex:3;
+   margin-left: 200px;
+   border: #71007d;
+}
+
+.header-btn {
+  background-color: #9d1dff;
+  border-radius: 30px;
+  border: none;
+  padding:2% 5% 2% 5%;
+  margin-left:10px;
+  min-width:15%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:white;
+  background: radial-gradient(circle at center,rgb(119, 0, 255),rgb(139, 81, 255));
+}
+
+.header-btn:focus{
+  outline: none;
 }
 
 #main {
-  background-color: rgba(0, 0, 0, 1);
-  height: 72vh;
+  background:repeating-linear-gradient(to top,rgb(55, 0, 92),rgb(0, 0, 0));
+  height: 68vh;
   width: 98.5%;
   padding: 10px;
   display: grid;
   grid-template-columns: 15% 15% 15% 15% 15%;
   column-gap: 5%;
+  row-gap:10px;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -62,9 +103,10 @@ input{
   background-color: rgb(214, 166, 255);
 }
 #now-playing-container {
-  min-height: 11vh;
+  min-height: 12vh;
   color: rgb(255, 255, 255);
-  background-color : rgb(172, 76, 255);
+  /* background-color : rgb(172, 76, 255); */
+  background: repeating-linear-gradient(to right,rgb(144, 0, 255),rgb(35, 0, 89));
   align-items: center;
   justify-content: center;
   display: flex;
@@ -90,7 +132,7 @@ audio{
   accent-color: blue;
 }
 audio::-webkit-media-controls-panel {
-  background-color: black;
+  background: black;
   color: aliceblue;
 }
 
@@ -105,6 +147,11 @@ audio::-webkit-media-controls-timeline {
   margin-left: 20px;
 }
 
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button {
+  display: none;
+}
+
 audio::-webkit-media-controls-current-time-display {
   color: #ffffff;
   margin-left:20px;
@@ -114,15 +161,14 @@ audio::-webkit-media-controls-time-remaining-display {
   color: #ffffff;
 }
 
-
 .song-container-button{
   position: relative;
   left:0;
   height:50px;
   margin-top: 40px;
-  background-color: rgb(163, 76, 240);
+  background: radial-gradient(circle at center,rgb(119, 0, 255),rgb(139, 81, 255));
   color: white;
-  box-shadow: 0px 0px 1000px 1px rgb(180, 17, 234);
+  /* box-shadow: 0px 0px 1000px 1px rgb(180, 17, 234); */
   border: 0px;
   border-radius: 20px;
   left:10%;
@@ -133,7 +179,7 @@ audio::-webkit-media-controls-time-remaining-display {
   z-index:2;
   display: block;
   width: 100%;
-  white-space: wrap;
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: Verdana, Geneva, Tahoma, sans-serif;   
@@ -143,7 +189,7 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .song-container-button:hover{
 
-  background-color: rgb(226, 83, 255);
+  background: linear-gradient(to left,rgb(169, 126, 255),rgb(36, 0, 218));
   box-shadow: 2px 2px 20px 5px rgb(78, 0, 141);
   padding: 20px;
   position: relative;
@@ -153,7 +199,7 @@ audio::-webkit-media-controls-time-remaining-display {
   transform :scale(1.25);
   z-index:0;
   transition: padding 0.5s, 
-              background-color 0.25s ease,
+              background 0.25s ease,
               transform 1s;
 
 }
@@ -161,3 +207,4 @@ audio::-webkit-media-controls-time-remaining-display {
 .song-container-button:focus{
   outline: none;
 }
+

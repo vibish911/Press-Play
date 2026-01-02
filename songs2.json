@@ -1,0 +1,32 @@
+{
+    "songs":[
+    {
+        "name":"Song This wordistoolongandhasnospaceinit",
+        "filePath":"./songs/song1.mp3"
+    },
+    {
+        "name":"Song C",
+        "filePath":"./songs/song2.mp3"
+    },
+    {
+        "name":"Song D",
+        "filePath":"./songs/song1.mp3"
+    },
+    {
+        "name":"Song C",
+        "filePath":"./songs/song2.mp3"
+    },
+        {
+        "name":"Song A",
+        "filePath":"./songs/song1.mp3"
+    },
+    {
+        "name":"SongB",
+        "filePath":"./songs/song2.mp3"
+    },
+    {
+        "name":"SongA",
+        "filePath":"./songs/song1.mp3"
+    }
+    ]
+}

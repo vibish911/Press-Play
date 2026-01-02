@@ -104,14 +104,47 @@ function renderSongs(allSongs) {
     }
 }
 
-// async function start() {
-//     let data = await getData();
-//     allSongs=data.songs;
-//     renderSongs(allSongs);
-// }
-async function main() {
-    await getData();
-    renderSongs(allSongs);
+let nowPlaying;
+function togglePlay() {
+    nowPlaying = document.getElementById('now-playing');
+    if (!nowPlaying) return;
+    
+    if (nowPlaying.paused) {
+        nowPlaying.play();
+    }
+    else {
+        nowPlaying.pause();
+    }
+}
+
+
+// console.log('-----<')
+const buttons = document.getElementsByClassName("song-container-button");
+// console.log(buttons)
+// console.log(buttons[0])
+
+// console.log('--<>---')
+allSongs = undefined;
+
+async function getData() {
+    const response = await fetch("songs.json");
+    const data = await response.json(); // convert to JS object
+    return data;
+}
+
+function renderSongs(allSongs) {
+    const main = document.getElementById("main");
+    main.innerHTML = "";
+    allSongs.forEach((e) => {
+        main.innerHTML += `<div class="song-container">
+        <button data-file-path=${e.filePath} data-name=${e.name} class="song-container-button">${e.name}</button>
+        </div>`
+    });
+}
+
+async function start() {
+    const allSongs = await getData();
+    renderSongs(allSongs.songs);
 }
 main();
 
